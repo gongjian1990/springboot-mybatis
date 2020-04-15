@@ -1,0 +1,26 @@
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/dynamic01?characterEncoding=utf8&useUnicode=true&useSSL=false&serverTimezone=GMT%2B8
+
+mybatis:
+  #config-location: classpath:config/mybatis-config.xml
+  # xxxMapper.xml的文件位置
+  mapper-locations: classpath:mapper/*Mapper.xml
+  # 自动扫描包路径给类配置别名
+  type-aliases-package: com.gj.domain
+  configuration:
+    # 开启驼峰命名转换
+    map-underscore-to-camel-case: true
+
+server:
+  port: 8080
+
+# 输出日志
+logging:
+  level:
+    com: debug
+  path: ../logs
